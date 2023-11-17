@@ -66,7 +66,10 @@ public class Element {
         return (int) this.masseAtomique - this.numeroAtomique;
     }
 
-    @Override
+    public void estIon(int charge){
+        this.nombreElectrons -= charge;
+    }
+    
     public String toString() {
         return "Numéro Atomique: " + numeroAtomique + "\nMasse Atomique : " + masseAtomique + "\nNeutrons : " + nombreNeutrons + "\nProtons : " + nombreProtons + "\nElectrons : " + nombreElectrons;
     }
