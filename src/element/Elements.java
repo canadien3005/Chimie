@@ -1,7 +1,7 @@
 package element;
 
 public class Elements {
-    
+
     private static final Element HYDROGÈNE = new Element(1, 1.007975);
     private static final Element HELIUM = new Element(2, 4.002602);
     private static final Element LITHIUM = new Element(3, 6.9395);
@@ -97,5 +97,24 @@ public class Elements {
             RUBIDIUM, STRONTIUM, YTTRIUM, ZIRCONIUM, NIOBIUM, MOLYDÈNE, TECHNÉTIUM, RUTHÉNIUM, RHODIUM, PALLADIUM, ARGENT, CADMIUM, INDIUM, ÉTAIN, ANTIMOINE, TELLURE, IODE, XÉNON,
             CÉSIUM, BARYUM, LANTHANE, CÉRIUM, PRASÉODYNE, NÉODYME, PROMÉTHIUM, SAMARIUM, EUROPIUM, GADOLINIUM, TERBIUM, DYSPROSIUM, HOLMIUM, ERBIUM, THULIUM, YTTERBIUM, LUTÉCIUM, HALNIUM, TANTALE, TUNGSTÈNE, RHÉNIUM, OSMIUM, IRIDIUM, PLATINE, OR, MERCURE, THALLIUM, PLOMB, BISMUTH, POLONIUM, ASTATE, RADON,
             FRANCIUM, RADIUM
+    };
+
+    public static String[] symbolElement = {"H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S",
+            "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se",
+            "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I",
+            "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu",
+            "Hf", "Ta", "W", "Re", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra"
+    };
+
+    public static String[] fullNameElement = {"hydrogène", "helium", "lithium", "béryllium", "bore", "carbone", "azote", "oxygène",
+            "fluor", "néon", "sodium", "magnésium", "aluminium", "silicium", "phosphore", "soufre", "chlore", "argon",
+            "potatium", "calcium", "scandium", "titane", "vanadium", "chrome", "manganèse", "fer", "cobalt", "nickel",
+            "cuivre", "zinc", "gallium", "germanium", "arsenic", "sélénium", "brome", "krypton", "rubidium", "strontium",
+            "yttrium", "zirconium", "niobium", "molydène", "technétium", "ruthénium", "rhodium", "palladium", "argent",
+            "cadmium", "indium", "étain", "antimoine", "tellure", "iode", "xénon", "césium", "baryum", "lanthane",
+            "cérium", "praséodyne", "néodyme", "prométhium", "samarium", "europium", "gadolinium", "terbium", "dysprosium",
+            "holmium", "erbium", "thulium", "ytterbium", "lutécium", "halnium", "tantale", "tungstène", "rhénium",
+            "osmium", "iridium", "platine", "or", "mercure", "thallium", "plomb", "bismuth", "polonium", "astate",
+            "radon", "francium", "radium"
     };
 }
