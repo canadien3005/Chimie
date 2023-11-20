@@ -90,20 +90,54 @@ public class Elements {
     private static final Element RADON = new Element(86, 222);
     private static final Element FRANCIUM = new Element(87, 223);
     private static final Element RADIUM = new Element(88, 226);
+    private static final Element ACTINIUM = new Element(89, 227);
+    private static final Element THORIUM = new Element(90, 232.01);
+    private static final Element PROTACTINIUM = new Element(91, 231.04);
+    private static final Element URANIUM = new Element(92, 238.03);
+    private static final Element NEPTUNIUM = new Element(93, 237);
+    private static final Element PLUTONIUM = new Element(94, 244);
+    private static final Element AMÉRICIUM = new Element(95, 243);
+    private static final Element CURIUM = new Element(96, 247);
+    private static final Element BERKÉLIUM = new Element(97, 247);
+    private static final Element CALIFORNIUM = new Element(98, 251);
+    private static final Element EINSTEINIUM = new Element(99, 252);
+    private static final Element FERMIUM = new Element(100, 257);
+    private static final Element MENDÉLÉVIUM = new Element(101, 258);
+    private static final Element NOBÉLIUM = new Element(102, 259);
+    private static final Element LAWRENCIUM = new Element(103, 262);
+    private static final Element RUTHERFORDIUM = new Element(104, 267);
+    private static final Element DUBNIUM = new Element(105, 268);
+    private static final Element SEABORGIUM = new Element(106, 271);
+    private static final Element BOHRIUM = new Element(107, 272);
+    private static final Element HASSIUM = new Element(108, 270);
+    private static final Element MEITNERIUM = new Element(109, 276);
+    private static final Element DARMSTADTIUM = new Element(110, 281);
+    private static final Element ROENTGENIUM = new Element(111, 280);
+    private static final Element COPERNICIUM = new Element(112, 285);
+    private static final Element NIHONIUM = new Element(113, 284);
+    private static final Element FLÉROVIUM = new Element(114, 289);
+    private static final Element MOSCOVIUM = new Element(115, 288);
+    private static final Element LIVERMORIUM = new Element(116, 293);
+    private static final Element TENNESSE = new Element(117, 292);
+    private static final Element OGANESSON = new Element(118, 294);
+
+
 
     public static Element[] listElement = { HYDROGÈNE, HELIUM, LITHIUM, BÉRYLLIUM, BORE, CARBONE, AZOTE, OXYGÈNE, FLUOR, NÉON,
             SODIUM, MAGNÉSIUM, ALUMINIUM, SILICIUM, PHOSPHORE, SOUFRE, CHLORE, ARGON,
             POTATIUM, CALCIUM, SCANDIUM, TITANE, VANADIUM, CHROME, MANGANÈSE, FER, COBALT, NICKEL, CUIVRE, ZINC, GALLIUM, GERMANIUM, ARSENIC, SÉLÉNIUM, BROME, KRYPTON,
             RUBIDIUM, STRONTIUM, YTTRIUM, ZIRCONIUM, NIOBIUM, MOLYDÈNE, TECHNÉTIUM, RUTHÉNIUM, RHODIUM, PALLADIUM, ARGENT, CADMIUM, INDIUM, ÉTAIN, ANTIMOINE, TELLURE, IODE, XÉNON,
             CÉSIUM, BARYUM, LANTHANE, CÉRIUM, PRASÉODYNE, NÉODYME, PROMÉTHIUM, SAMARIUM, EUROPIUM, GADOLINIUM, TERBIUM, DYSPROSIUM, HOLMIUM, ERBIUM, THULIUM, YTTERBIUM, LUTÉCIUM, HALNIUM, TANTALE, TUNGSTÈNE, RHÉNIUM, OSMIUM, IRIDIUM, PLATINE, OR, MERCURE, THALLIUM, PLOMB, BISMUTH, POLONIUM, ASTATE, RADON,
-            FRANCIUM, RADIUM
+            FRANCIUM, RADIUM, ACTINIUM, THORIUM, PROTACTINIUM, URANIUM, NEPTUNIUM, PLUTONIUM, AMÉRICIUM, CURIUM, BERKÉLIUM, CALIFORNIUM, EINSTEINIUM, FERMIUM, MENDÉLÉVIUM, NOBÉLIUM, LAWRENCIUM, RUTHERFORDIUM, DUBNIUM, SEABORGIUM, BOHRIUM, HASSIUM, MEITNERIUM, DARMSTADTIUM, ROENTGENIUM, COPERNICIUM, NIHONIUM, FLÉROVIUM, MOSCOVIUM, LIVERMORIUM, TENNESSE, OGANESSON
     };
 
     public static String[] symbolElement = {"H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S",
             "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se",
             "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I",
             "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu",
-            "Hf", "Ta", "W", "Re", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra"
+            "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra",
+            "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg",
+            "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"
     };
 
     public static String[] fullNameElement = {"hydrogène", "helium", "lithium", "béryllium", "bore", "carbone", "azote", "oxygène",
@@ -115,6 +149,9 @@ public class Elements {
             "cérium", "praséodyne", "néodyme", "prométhium", "samarium", "europium", "gadolinium", "terbium", "dysprosium",
             "holmium", "erbium", "thulium", "ytterbium", "lutécium", "halnium", "tantale", "tungstène", "rhénium",
             "osmium", "iridium", "platine", "or", "mercure", "thallium", "plomb", "bismuth", "polonium", "astate",
-            "radon", "francium", "radium"
+            "radon", "francium", "radium", "actinium", "thorium", "protactinium", "uranium", "neptunium", "plutonium",
+            "américium", "curium", "berkélium", "californium", "einsteinium", "fermium", "menélévium", "nobélium", "lawrencium",
+            "rutherfordium", "dubnium", "seaborgium", "bohrium", "hassium", "meitnerium", "darmstadtium", "roentgenium",
+            "copernicium", "nihonium", "flérovium", "moscovium", "livermorium", "tennesse", "oganesson"
     };
 }
