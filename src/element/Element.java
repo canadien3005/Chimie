@@ -66,11 +66,22 @@ public class Element {
         return (int) this.masseAtomique - this.numeroAtomique;
     }
 
-    public void estIon(int charge){
+    public void Ion(int charge){
         this.nombreElectrons -= charge;
     }
-    
+
+    public void Ion(String charge){
+        this.nombreElectrons -= Integer.parseInt(charge);
+    }
+
     public String toString() {
         return "Numéro Atomique: " + numeroAtomique + "\nMasse Atomique : " + masseAtomique + "\nNeutrons : " + nombreNeutrons + "\nProtons : " + nombreProtons + "\nElectrons : " + nombreElectrons;
+    }
+
+    public boolean equals(Element element) {
+        if (this == element) return true;
+        return numeroAtomique == element.numeroAtomique && Double.compare(masseAtomique, element.masseAtomique) == 0 &&
+                nombreNeutrons == element.nombreNeutrons && nombreProtons == element.nombreProtons &&
+                nombreElectrons == element.nombreElectrons;
     }
 }

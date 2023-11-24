@@ -154,4 +154,69 @@ public class Elements {
             "rutherfordium", "dubnium", "seaborgium", "bohrium", "hassium", "meitnerium", "darmstadtium", "roentgenium",
             "copernicium", "nihonium", "flérovium", "moscovium", "livermorium", "tennesse", "oganesson"
     };
+
+    private static int getElementIndex(int NumeroAtomique){
+        return NumeroAtomique-1;
+    }
+
+    private static int getElementIndex(String name){
+        for (int i = 0; i < 118; i++){
+            if (name.matches(symbolElement[i]) || name.matches(fullNameElement[i])){
+                return i;
+            }
+        }
+
+        System.err.println("Aucun élément trouvé");
+
+        return -1;
+    }
+
+    private static int getElementIndex(Double masseAtomique){
+        for (int i = 0; i < 118; i++){
+            if (listElement[i].getMasseAtomique() == masseAtomique) {
+                return i;
+            }
+        }
+
+        System.err.println("Aucun élément trouvé");
+
+        return -1;
+    }
+
+    public static Element getElement(int NumeroAtomique) {
+        return listElement[getElementIndex(NumeroAtomique)];
+    }
+
+    public static String getName(int NumeroAtomique) {
+        return fullNameElement[getElementIndex(NumeroAtomique)];
+    }
+
+    public static String getSymbol(int NumeroAtomique) {
+        return symbolElement[getElementIndex(NumeroAtomique)];
+    }
+
+    public static Element getElement(String name) {
+        return listElement[getElementIndex(name)];
+    }
+
+    public static String getName(String name) {
+        return fullNameElement[getElementIndex(name)];
+    }
+
+    public static String getSymbol(String name) {
+        return symbolElement[getElementIndex(name)];
+    }
+
+    public static Element getElement(double masseAtomique) {
+        return listElement[getElementIndex(masseAtomique)];
+    }
+
+    public static String getName(double masseAtomique) {
+        return fullNameElement[getElementIndex(masseAtomique)];
+    }
+
+    public static String getSymbol(double masseAtomique) {
+        return symbolElement[getElementIndex(masseAtomique)];
+    }
+
 }
