@@ -66,12 +66,36 @@ public class Element {
         return (int) this.masseAtomique - this.numeroAtomique;
     }
 
+    /**
+     * Change the number of electron in the atom
+     * @param charge int
+     */
     public void Ion(int charge){
         this.nombreElectrons -= charge;
     }
 
+    /**
+     * Change the number of electron in the atom
+     * @param charge String
+     */
     public void Ion(String charge){
         this.nombreElectrons -= Integer.parseInt(charge);
+    }
+
+    /**
+     *
+     * @return the value of the charge of the ion
+     */
+    public int charge(){
+        return -(nombreElectrons-numeroAtomique);
+    }
+
+    /**
+     *
+     * @return a new Element object that have the same default values
+     */
+    public Element copy(){
+        return new Element(this.numeroAtomique, this.masseAtomique);
     }
 
     public String toString() {
@@ -84,4 +108,6 @@ public class Element {
                 nombreNeutrons == element.nombreNeutrons && nombreProtons == element.nombreProtons &&
                 nombreElectrons == element.nombreElectrons;
     }
+
+
 }

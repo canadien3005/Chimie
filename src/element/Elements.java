@@ -163,7 +163,7 @@ public class Elements {
      */
 
     private static int getElementIndex(int numeroAtomique){
-        if (numeroAtomique >= 118){
+        if (numeroAtomique > 0 && numeroAtomique <= 118){
             return numeroAtomique-1;
         } else {
             return -1;
@@ -207,11 +207,11 @@ public class Elements {
 
     /**
      * @param numeroAtomique the atomic number of the element
-     * @return an object type Element when the atomic number is less or equal to 118, otherwise return null
+     * @return an object type Element when the atomic number is between 1 and 118, otherwise return null
      */
     public static Element getElement(int numeroAtomique) {
         try {
-            return listElement[getElementIndex(numeroAtomique)];
+            return listElement[getElementIndex(numeroAtomique)].copy();
         } catch (Exception e) {
             System.err.println("Element not found" + e);
             return null;
@@ -220,7 +220,7 @@ public class Elements {
 
     /**
      * @param numeroAtomique the atomic number of the element
-     * @return a String of the name of the element when the atomic number is less or equal to 118, otherwise return null
+     * @return a String of the name of the element when the atomic number is between 1 and 118, otherwise return null
      */
     public static String getName(int numeroAtomique) {
         try {
@@ -233,7 +233,7 @@ public class Elements {
 
     /**
      * @param numeroAtomique the atomic number of the element
-     * @return a String of the symbol of the element when the atomic number is less or equal to 118, otherwise return null
+     * @return a String of the symbol of the element when the atomic number is between 1 and 118, otherwise return null
      */
     public static String getSymbol(int numeroAtomique) {
         try {
@@ -251,7 +251,7 @@ public class Elements {
      */
     public static Element getElement(double masseAtomique) {
         try{
-            return listElement[getElementIndex(masseAtomique)];
+            return listElement[getElementIndex(masseAtomique)].copy();
         } catch (Exception e) {
             System.err.println("Element not found" + e);
             return null;
@@ -293,7 +293,7 @@ public class Elements {
      */
     public static Element getElement(String name) {
         try{
-            return listElement[getElementIndex(name)];
+            return listElement[getElementIndex(name)].copy();
         } catch (Exception e) {
             System.err.println("Element not found" + e);
             return null;
