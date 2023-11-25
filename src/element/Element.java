@@ -11,7 +11,7 @@ public class Element {
     public Element(int numeroAtomique, double masseAtomique){
         this.numeroAtomique = numeroAtomique;
         this.masseAtomique = masseAtomique;
-        this.nombreNeutrons = NombreNeutrons();
+        this.nombreNeutrons = nombreNeutrons();
         this.nombreProtons = numeroAtomique;
         this.nombreElectrons = numeroAtomique;
     }
@@ -34,8 +34,8 @@ public class Element {
         return nombreProtons;
     }
 
-    public void setNombreElectrons(int nombreElectrons) {
-        this.nombreElectrons = nombreElectrons;
+    public int getNombreElectrons() {
+        return nombreElectrons;
     }
 
     /*Setter*/
@@ -56,13 +56,13 @@ public class Element {
         this.nombreProtons = nombreProtons;
     }
 
-    public int getNombreElectrons() {
-        return nombreElectrons;
+    public void setNombreElectrons(int nombreElectrons) {
+        this.nombreElectrons = nombreElectrons;
     }
 
     /*Method*/
 
-    private int NombreNeutrons(){
+    private int nombreNeutrons(){
         return (int) this.masseAtomique - this.numeroAtomique;
     }
 
@@ -70,7 +70,7 @@ public class Element {
      * Change the number of electron in the atom
      * @param charge int
      */
-    public void Ion(int charge){
+    public void ion(int charge){
         this.nombreElectrons -= charge;
     }
 
@@ -78,8 +78,24 @@ public class Element {
      * Change the number of electron in the atom
      * @param charge String
      */
-    public void Ion(String charge){
+    public void ion(String charge){
         this.nombreElectrons -= Integer.parseInt(charge);
+    }
+
+    /**
+     * Change the number of neutron in the atom
+     * @param difference INT; the difference between standard number of neutrons and the isotope number of neutron
+     */
+    public void isotope(int difference){
+        this.nombreNeutrons += difference;
+    }
+
+    /**
+     * Change the number of neutron in the atom
+     * @param difference String; the difference between standard number of neutrons and the isotope number of neutron
+     */
+    public void isotope(String difference){
+        this.nombreNeutrons += Integer.parseInt(difference);
     }
 
     /**
