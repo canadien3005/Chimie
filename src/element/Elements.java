@@ -213,7 +213,7 @@ public class Elements {
         try {
             return listElement[getElementIndex(numeroAtomique)].copy();
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -226,7 +226,7 @@ public class Elements {
         try {
             return fullNameElement[getElementIndex(numeroAtomique)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -239,7 +239,7 @@ public class Elements {
         try {
             return symbolElement[getElementIndex(numeroAtomique)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -267,7 +267,7 @@ public class Elements {
         try{
             return fullNameElement[getElementIndex(masseAtomique)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -281,7 +281,7 @@ public class Elements {
         try{
             return symbolElement[getElementIndex(masseAtomique)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -295,7 +295,7 @@ public class Elements {
         try{
             return listElement[getElementIndex(name)].copy();
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -309,7 +309,7 @@ public class Elements {
         try{
             return fullNameElement[getElementIndex(name)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
@@ -323,7 +323,7 @@ public class Elements {
         try{
             return symbolElement[getElementIndex(name)];
         } catch (Exception e) {
-            System.err.println("Element not found" + e);
+            System.err.println("Element not found " + e);
             return null;
         }
     }
