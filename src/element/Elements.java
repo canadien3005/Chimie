@@ -155,13 +155,30 @@ public class Elements {
             "copernicium", "nihonium", "flérovium", "moscovium", "livermorium", "tennesse", "oganesson"
     };
 
-    private static int getElementIndex(int NumeroAtomique){
-        return NumeroAtomique-1;
+
+    /**
+     * Private method to get the index of the element from the atomic number
+     * @param numeroAtomique the atomic number
+     * @return the index of the element; -1 if out of reach
+     */
+
+    private static int getElementIndex(int numeroAtomique){
+        if (numeroAtomique > 0 && numeroAtomique <= 118){
+            return numeroAtomique-1;
+        } else {
+            return -1;
+        }
     }
+
+    /**
+     * Private method to get the index of the element from the name or the symbol of the element
+     * @param name a String of the French name or the symbol of the element
+     * @return the index of the element; -1 if the element is not found
+     **/
 
     private static int getElementIndex(String name){
         for (int i = 0; i < 118; i++){
-            if (name.matches(symbolElement[i]) || name.matches(fullNameElement[i])){
+            if (name.toLowerCase().matches(symbolElement[i]) || name.toLowerCase().matches(fullNameElement[i])){
                 return i;
             }
         }
@@ -171,6 +188,11 @@ public class Elements {
         return -1;
     }
 
+    /**
+     * Private method to get the index of the element from the atomic mass
+     * @param masseAtomique need to be double
+     * @return the index of the element; -1 if the element is not found
+     */
     private static int getElementIndex(Double masseAtomique){
         for (int i = 0; i < 118; i++){
             if (listElement[i].getMasseAtomique() == masseAtomique) {
@@ -183,40 +205,127 @@ public class Elements {
         return -1;
     }
 
-    public static Element getElement(int NumeroAtomique) {
-        return listElement[getElementIndex(NumeroAtomique)];
+    /**
+     * @param numeroAtomique the atomic number of the element
+     * @return an object type Element when the atomic number is between 1 and 118, otherwise return null
+     */
+    public static Element getElement(int numeroAtomique) {
+        try {
+            return listElement[getElementIndex(numeroAtomique)].copy();
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
     }
 
-    public static String getName(int NumeroAtomique) {
-        return fullNameElement[getElementIndex(NumeroAtomique)];
+    /**
+     * @param numeroAtomique the atomic number of the element
+     * @return a String of the name of the element when the atomic number is between 1 and 118, otherwise return null
+     */
+    public static String getName(int numeroAtomique) {
+        try {
+            return fullNameElement[getElementIndex(numeroAtomique)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
     }
 
-    public static String getSymbol(int NumeroAtomique) {
-        return symbolElement[getElementIndex(NumeroAtomique)];
+    /**
+     * @param numeroAtomique the atomic number of the element
+     * @return a String of the symbol of the element when the atomic number is between 1 and 118, otherwise return null
+     */
+    public static String getSymbol(int numeroAtomique) {
+        try {
+            return symbolElement[getElementIndex(numeroAtomique)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
     }
 
-    public static Element getElement(String name) {
-        return listElement[getElementIndex(name)];
-    }
-
-    public static String getName(String name) {
-        return fullNameElement[getElementIndex(name)];
-    }
-
-    public static String getSymbol(String name) {
-        return symbolElement[getElementIndex(name)];
-    }
-
+    /**
+     *
+     * @param masseAtomique need to be double and as precise as this <a href="https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments#/media/Fichier:Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments.svg">...</a>
+     * @return an object type Element when the atomic mass matches with an element, otherwise return null
+     */
     public static Element getElement(double masseAtomique) {
-        return listElement[getElementIndex(masseAtomique)];
+        try{
+            return listElement[getElementIndex(masseAtomique)].copy();
+        } catch (Exception e) {
+            System.err.println("Element not found" + e);
+            return null;
+        }
     }
 
+    /**
+     *
+     * @param masseAtomique need to be double and as precise as this <a href="https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments#/media/Fichier:Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments.svg">...</a>
+     * @return a String of the name of the element when the atomic mass matches with an element, otherwise return null
+     */
     public static String getName(double masseAtomique) {
-        return fullNameElement[getElementIndex(masseAtomique)];
+        try{
+            return fullNameElement[getElementIndex(masseAtomique)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
     }
 
+    /**
+     *
+     * @param masseAtomique need to be double and as precise as this <a href="https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments#/media/Fichier:Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments.svg">...</a>
+     * @return a String of the symbol of the element when the atomic mass matches with an element, otherwise return null
+     */
     public static String getSymbol(double masseAtomique) {
-        return symbolElement[getElementIndex(masseAtomique)];
+        try{
+            return symbolElement[getElementIndex(masseAtomique)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param name Need to be exact
+     * @return an object type Element when the name or symbol of an element match with the param, otherwise return null
+     */
+    public static Element getElement(String name) {
+        try{
+            return listElement[getElementIndex(name)].copy();
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param name Need to be exact
+     * @return a String of the name when the name or symbol of an element match with the param, otherwise return null
+     */
+    public static String getName(String name) {
+        try{
+            return fullNameElement[getElementIndex(name)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param name Need to be exact
+     * @return a String of the symbol when the name or symbol of an element match with the param, otherwise return null
+     */
+    public static String getSymbol(String name) {
+        try{
+            return symbolElement[getElementIndex(name)];
+        } catch (Exception e) {
+            System.err.println("Element not found " + e);
+            return null;
+        }
     }
 
 }
