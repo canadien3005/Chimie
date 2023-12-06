@@ -10,16 +10,14 @@ public class Commande {
   
     public static void setElement(int numero) {
     	element = Elements.getElement(numero);
-        
     }
   
     public static void setCharge(int charge) {
-    	element.Ion(charge);
-        
+    	element.ion(charge);
     }
   
     public static void setQuantity(String quantity){
-        IONS = Double.parseDouble(quantity)* AVOGADRO;
+        IONS = Double.parseDouble(quantity) * AVOGADRO;
         getNombreElectron();
     }
   
@@ -28,6 +26,6 @@ public class Commande {
     }
   
     public static String getResult(){
-        return "Nombre d'électron:"+ NbElectron ;
+        return "Nombre d'électron:" + NbElectron;
     }
 }
