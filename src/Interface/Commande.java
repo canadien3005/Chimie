@@ -26,6 +26,6 @@ public class Commande {
     }
   
     public static String getResult(){
-        return "Nombre d'électron:" + NbElectron;
+        return "" + NbElectron;
     }
 }

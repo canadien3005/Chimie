@@ -24,7 +24,7 @@ import javax.swing.JLabel;
 
 public class Tableau_Periodique {
 
-	private JFrame frame, frame2;
+	private JFrame frame;
 	private final Canvas canvas = new Canvas();
 	private JTextField Textlanthanides;
 	private JTextField TextActinides;
@@ -115,23 +115,40 @@ public class Tableau_Periodique {
 		AffichageSymbole.setBounds(73, 202, 346, 329);
 		AffichageSymbole.setFont(new Font("Tahoma", Font.PLAIN, 150));
 		internalFrame.getContentPane().add(AffichageSymbole);
-		
+
 		JLabel AffichageCharge = new JLabel("");
 		AffichageCharge.setBounds(247, 244, 78, 127);
 		AffichageCharge.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		internalFrame.getContentPane().add(AffichageCharge);
+
 		
 		EntrerDeMolecule = new JTextField();
+		EntrerDeMolecule.setFont(new Font("Tahoma", Font.PLAIN, 31));
 		EntrerDeMolecule.setBounds(372, 312, 516, 127);
 		internalFrame.getContentPane().add(EntrerDeMolecule);
 		EntrerDeMolecule.setColumns(10);
-		
-		JLabel NbMolecule = new JLabel("Entrer le nombre de molécules:");
+
+		JLabel NbMolecule = new JLabel("Entrer le nombre de mol:");
 		NbMolecule.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		NbMolecule.setBounds(372, 265, 514, 37);
 		internalFrame.getContentPane().add(NbMolecule);
+
+		JButton Calculer = new JButton("Calcul");
+		Calculer.setFont(new Font("Tahoma", Font.PLAIN, 39));
+		Calculer.setBounds(898, 312, 155, 127);
+		internalFrame.getContentPane().add(Calculer);
 		
+		JLabel Resultat = new JLabel();
+		Resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		Resultat.setBounds(20, 270, 1050, 169);
+		internalFrame.getContentPane().add(Resultat);
 		
+		JLabel NbElectron = new JLabel();
+		NbElectron.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		NbElectron.setBounds(296, 440, 828, 127);
+		internalFrame.getContentPane().add(NbElectron);
+
+
 		internalFrame.setVisible(false);
 		AffichageSymbole.setVisible(false);
 
@@ -179,7 +196,7 @@ public class Tableau_Periodique {
 		}
 		for (int i = 0; i < button.length; i++) {
 			button[i] = new JButton(Elements.getSymbol(i+1));
-			
+
 		}
 
 		int numero = 0;
@@ -215,7 +232,11 @@ public class Tableau_Periodique {
 			final int index = i+1;
 			button[i].addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent e) { 
-
+					Commande.setElement(index);
+					
+					NbElectron.setVisible(false);
+					Resultat.setVisible(false);
+					Calculer.setVisible(false);
 					button[index-1].setVisible(false);
 					button[0].setVisible(false);
 					button[1].setVisible(false);
@@ -230,7 +251,8 @@ public class Tableau_Periodique {
 					NbMolecule.setVisible(false);
 					AffichageSymbole.setVisible(true);
 					AffichageSymbole.setText(Elements.getSymbol(index));
-					charge(internalFrame, AffichageCharge, EntrerDeMolecule, NbMolecule);
+					charge(internalFrame, AffichageCharge, EntrerDeMolecule, NbMolecule, Calculer, AffichageSymbole, NbElectron, Resultat, Elements.getElement(index));
+
 
 				}
 
@@ -240,11 +262,11 @@ public class Tableau_Periodique {
 
 		}
 	}
-	public static void charge(JInternalFrame internalFrame, JLabel AffichageCharge, JTextField EntrerDeMolecule, JLabel NbMolecule){
+	public static void charge(JInternalFrame internalFrame, JLabel AffichageCharge, JTextField EntrerDeMolecule, JLabel NbMolecule, JButton Calculer, JLabel AffichageSymbole, JLabel NbElectron, JLabel Resultat, Element getcharge){
 		int x,y;
 		x= 300;
 		y= 350;
-	
+
 		JButton[] button = new JButton[3];
 		for (int i =0; i<button.length; i++) {
 			final int index = i+1;
@@ -256,18 +278,38 @@ public class Tableau_Periodique {
 			button[i].setBackground(Color.LIGHT_GRAY);
 			button[i].addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent e) { 
+					Commande.setCharge(-index);
+					getcharge.ion(-index);
 					AffichageCharge.setText("-"+index+"");
 					button[0].setVisible(false);
 					button[1].setVisible(false);
 					button[2].setVisible(false);
 					EntrerDeMolecule.setVisible(true);
 					NbMolecule.setVisible(true);
+					Calculer.setVisible(true);
+					Calculer.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							Commande.setQuantity(EntrerDeMolecule.getText());
+							EntrerDeMolecule.setVisible(false);
+							NbMolecule.setVisible(false);
+							Calculer.setVisible(false);
+							AffichageSymbole.setVisible(false);
+							AffichageCharge.setVisible(false);
+							NbElectron.setText(Commande.getResult()+ " électrons");
+							NbElectron.setVisible(true);
+							Resultat.setText("Dans " + EntrerDeMolecule.getText() + " mol de l'élément " + getcharge.getNom() + " avec une charge de " + getcharge.charge() + ", il y a :");
+							Resultat.setVisible(true);
+						}
+					});
 				}
-				
+
 
 			});
 		}
-		
+
+
+
+
 	}
 }
 
