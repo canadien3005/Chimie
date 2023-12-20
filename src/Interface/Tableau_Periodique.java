@@ -128,7 +128,7 @@ public class Tableau_Periodique {
 		internalFrame.getContentPane().add(EntrerDeMolecule);
 		EntrerDeMolecule.setColumns(10);
 
-		JLabel NbMolecule = new JLabel("Entrer le nombre d'électrons:");
+		JLabel NbMolecule = new JLabel("Entrer le nombre d'atomes:");
 		NbMolecule.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		NbMolecule.setBounds(372, 265, 514, 37);
 		internalFrame.getContentPane().add(NbMolecule);
@@ -297,7 +297,7 @@ public class Tableau_Periodique {
 							AffichageCharge.setVisible(false);
 							NbElectron.setText(Commande.getResult()+ " électrons");
 							NbElectron.setVisible(true);
-							Resultat.setText("Dans " + EntrerDeMolecule.getText() + " mol de l'élément " + getcharge.getNom() + " avec une charge de " + getcharge.charge() + ", il y a :");
+							Resultat.setText("Dans " + EntrerDeMolecule.getText() + " atomes de " + getcharge.getNom() + " avec une charge de " + getcharge.charge() + ", il y a :");
 							Resultat.setVisible(true);
 						}
 					});
