@@ -128,7 +128,7 @@ public class Tableau_Periodique {
 		internalFrame.getContentPane().add(EntrerDeMolecule);
 		EntrerDeMolecule.setColumns(10);
 
-		JLabel NbMolecule = new JLabel("Entrer le nombre de mol:");
+		JLabel NbMolecule = new JLabel("Entrer le nombre d'électrons:");
 		NbMolecule.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		NbMolecule.setBounds(372, 265, 514, 37);
 		internalFrame.getContentPane().add(NbMolecule);
